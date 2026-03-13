@@ -1,0 +1,294 @@
+/* ===================== */
+/* VARIABLES */
+/* ===================== */
+
+:root{
+    --primary:#1A365D;
+    --accent:#C5A059;
+    --bg:#f4f6f9;
+    --text:#2b2b2b;
+    --white:#ffffff;
+
+    --shadow:0 8px 25px rgba(0,0,0,0.08);
+    --shadow-hover:0 15px 35px rgba(0,0,0,0.15);
+
+    --radius:12px;
+}
+
+/* ===================== */
+/* RESET */
+/* ===================== */
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.7;
+}
+
+/* ===================== */
+/* NAVBAR */
+/* ===================== */
+
+nav{
+background:var(--primary);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+gap:30px;
+list-style:none;
+padding:16px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:var(--accent);
+}
+
+/* ===================== */
+/* HERO */
+/* ===================== */
+
+header{
+padding:70px 20px;
+background:linear-gradient(180deg,#ffffff,#f7f9fc);
+}
+
+.hero-container{
+max-width:1100px;
+margin:auto;
+display:flex;
+align-items:center;
+gap:50px;
+}
+
+.hero-text h1{
+font-size:48px;
+color:var(--primary);
+margin-bottom:10px;
+}
+
+.hero-text h2{
+color:var(--accent);
+margin-bottom:15px;
+}
+
+.hero-image img{
+width:320px;
+border-radius:12px;
+box-shadow:var(--shadow);
+}
+
+/* ===================== */
+/* BOTONES DE CONTACTO */
+/* ===================== */
+
+.contact-buttons{
+margin-top:25px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 22px;
+border-radius:50px;
+font-weight:600;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+gap:10px;
+transition:0.3s;
+}
+
+/* WhatsApp */
+
+.btn-whatsapp{
+background:#25D366;
+color:white;
+box-shadow:0 0 0 rgba(37,211,102,0.7);
+animation:pulseWhatsapp 2s infinite;
+}
+
+@keyframes pulseWhatsapp{
+
+0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6)}
+70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}
+100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+}
+
+.btn-whatsapp:hover{
+transform:translateY(-2px);
+}
+
+/* Teléfono */
+
+.btn-phone{
+background:var(--primary);
+color:white;
+}
+
+.btn-phone:hover{
+background:#0f2744;
+transform:translateY(-2px);
+}
+
+/* ===================== */
+/* MAIN */
+/* ===================== */
+
+main{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* ===================== */
+/* SECCIONES */
+/* ===================== */
+
+section{
+background:white;
+padding:40px;
+margin-bottom:35px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
+
+section h2{
+font-size:28px;
+margin-bottom:20px;
+color:var(--primary);
+}
+
+/* ===================== */
+/* SERVICIOS */
+/* ===================== */
+
+.service-list{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+list-style:none;
+}
+
+.service-list li{
+
+background:white;
+padding:25px;
+border-radius:var(--radius);
+position:relative;
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+transition:0.35s;
+}
+
+/* iluminación */
+
+.service-list li::before{
+
+content:"";
+
+position:absolute;
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.6),
+transparent
+);
+
+transition:0.6s;
+
+}
+
+/* hover */
+
+.service-list li:hover{
+
+transform:translateY(-6px);
+box-shadow:var(--shadow-hover);
+
+}
+
+.service-list li:hover::before{
+left:100%;
+}
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+
+footer{
+background:var(--primary);
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media(max-width:900px){
+
+.hero-container{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-image img{
+width:240px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-text h1{
+font-size:34px;
+}
+
+.hero-text h2{
+font-size:18px;
+}
+
+section{
+padding:25px;
+}
+
+nav ul{
+flex-wrap:wrap;
+gap:15px;
+}
+
+.contact-buttons{
+justify-content:center;
+}
+
+}
